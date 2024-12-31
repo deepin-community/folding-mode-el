@@ -1,15 +1,35 @@
-Source: template-repository
-Section: unknown
+Source: folding-mode-el
+Section: lisp
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Emacsen team <debian-emacsen@lists.debian.org>
+Uploaders: Nicholas D Steeves <sten@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               dh-elpa,
+               texinfo <!nodoc>
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
+Homepage: https://github.com/jaalto/project-emacs--folding-mode
+Vcs-Browser: https://salsa.debian.org/emacsen-team/folding-mode-el
+Vcs-Git: https://salsa.debian.org/emacsen-team/folding-mode-el.git
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: elpa-folding
+Architecture: all
+Depends: ${elpa:Depends}, ${misc:Depends}
+Recommends: emacs
+Enhances: emacs
+Description: folding-editor minor mode for Emacs
+ This package provides an Emacs minor mode for folding (hiding) custom
+ regions.  It also provides an Isearch interface to the folds.  Folds
+ can be nested hierarchically.
+ .
+ Folding-mode is similar to a general-purpose Outline-mode or to
+ Org-mode.  It can CLOSE a fold so that only initial special marker
+ and optional fold name/comment are visible, or it can ENTER a fold so
+ that all text outside of the target fold is hidden.
+ .
+ The upstream maintainers of folding-mode do not recommend exclusively
+ relying on folding-mode for code layout and navigation.  Hideshow and
+ Imenu are more appropriate for folding code at a per-function() level
+ of granularity.  In particular Imenu is more useful for this because
+ it parses function indexes.  Folding mode is most useful for dividing
+ code into broad operations and for organising stubs while prototyping.

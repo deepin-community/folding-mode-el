@@ -1,0 +1,25 @@
+From: Nicholas D Steeves <sten@debian.org>
+Date: Sat, 15 Sep 2018 16:22:02 -0400
+Subject: Generate Package-Version from folding-version-time
+
+Generate Package-Version from upstream folding-version-time in a
+format that retains compatibility with MELPA.
+
+Forwarded: no
+Last-Update: 2024-04-22
+---
+ folding.el | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/folding.el b/folding.el
+index c414341..75d969e 100644
+--- a/folding.el
++++ b/folding.el
+@@ -14,6 +14,7 @@
+ ;; Maintainer:  Jari Aalto <jari aalto A T cante dt net>
+ ;; Created:     1992
+ ;; Keywords:    tools
++;; Package-Version: GENERATED-IN-RULES
+ ;; Vcs-URL:     https://github.com/jaalto/project-emacs--folding-mode
+ 
+ (defconst folding-version-time "2024.0308.0333"

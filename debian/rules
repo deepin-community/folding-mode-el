@@ -1,4 +1,20 @@
 #!/usr/bin/make -f
 
+export GENERATED_VERSION:=$(shell emacs --batch -Q -q -l folding.el --eval "(print folding-version-time)" | sed -e 's/\"//g' -e 's/\.//')
+
 %:
-	dh $@
+	dh $@ --with elpa
+
+# info page is not generated without this override
+override_dh_elpa:
+	sed -i "s/GENERATED-IN-RULES/$(GENERATED_VERSION)/" folding.el
+	dh_elpa
+# support the nodoc build profile
+ifneq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
+	echo -e "\nnodoc build profile enabled, therefore not building docs.\n"
+else
+	makeinfo --no-split folding.texi -o debian/tmp/folding.info
+endif
+
+execute_before_dh_auto_clean:
+	sed -i "s/$(GENERATED_VERSION)/GENERATED-IN-RULES/" folding.el

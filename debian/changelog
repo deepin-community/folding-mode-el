@@ -1,5 +1,90 @@
-template-repository (1.0-1) unstable; urgency=medium
+folding-mode-el (0.0~git20240308.b27c4a1-2) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * Rebuild against dh-elpa 2.1.5.
+    Upload pushed to dgit-repos but not salsa.
+    See <https://lists.debian.org/debian-emacsen/2024/07/msg00077.html>.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Sean Whitton <spwhitton@spwhitton.name>  Thu, 25 Jul 2024 20:36:28 +0900
+
+folding-mode-el (0.0~git20240308.b27c4a1-1) unstable; urgency=medium
+
+  * Import new upstream snapshot.
+  * Rebase quilt series onto this snapshot.
+  * Record copyright info for folding.texi.
+  * Import upstream copyright statement update.
+  * Declare Standards-Version: 4.7.0 (no changes required).
+
+ -- Nicholas D Steeves <sten@debian.org>  Mon, 22 Apr 2024 07:53:21 -0400
+
+folding-mode-el (0.0~git20231003.f6fc3af-1) unstable; urgency=medium
+
+  * Import new upstream snapshot.
+  * Update copyright file with upstream statements, and update my own range.
+  * Make generation of Package-Version automatic:
+    + Do this work in the dh_elpa override, and undo it before_dh_auto_clean.
+    + Rename 0001-Add-Package-Version-used-in-MELPA-for-this-snapshot.patch
+      -> 0001-Generate-Package-Version-from-folding-version-time.patch
+
+ -- Nicholas D Steeves <sten@debian.org>  Sat, 07 Oct 2023 16:22:19 -0400
+
+folding-mode-el (0.0~git20230919.46ebc3a-1) unstable; urgency=medium
+
+  * Package new upstream snapshot.
+  * Update 0001-Add-Package-Version-used-in-MELPA-for-this-snapshot.patch.
+  * Drop unnecessary version qualifier for Recommends: emacs (>= 46.0 is
+    available in oldoldstable).
+  * Declare Standards-Version: 4.6.2 (No changes required).
+
+ -- Nicholas D Steeves <sten@debian.org>  Wed, 27 Sep 2023 16:47:41 -0400
+
+folding-mode-el (0.0~git20220110.1ce338b-1) unstable; urgency=medium
+
+  * Package new upstream snapshot.
+  * Rebase quilt series onto this snapshot:
+    - Drop 0003-folding.el-Fix-typo-thanks-to-Reuben-Thomas.patch (merged
+      upstream).
+  * Update ELPA version in
+    0001-Add-Package-Version-used-in-MELPA-for-this-snapshot.patch.
+  * Update my email address.
+  * Streamline copyright date ranges, and update my own.
+  * Create watch file using git mode to provide notifications with commit
+    granularity, because it doesn't look like upstream will ever start using
+    tagged releases, and because commits are infrequent.
+  * Declare Standards-Version: 4.6.1 (No changes required).
+
+ -- Nicholas D Steeves <sten@debian.org>  Fri, 13 May 2022 21:01:06 -0400
+
+folding-mode-el (0+20200825.748-1) unstable; urgency=medium
+
+  * Package new upstream snapshot.
+  * Rebase patches onto this tag, and update
+    0001-Add-Package-Version-used-in-MELPA-for-this-snapshot.patch to declare
+    the correct version.
+  * Drop 0002-Add-folding.texi.patch (merged upstream).
+  * Migrate to debhelper-compat 13.
+  * Drop Enhances emacs25, because emacs has been unversioned.
+  * Synchronise copyright file with upstream copyright statements.
+  * Update my copyright year range.
+  * Set Forwarded URL for
+    0003-folding.el-Fix-typo-thanks-to-Reuben-Thomas.patch
+  * Declare Rules-Requires-Root: no.
+  * Declare Standards-Version: 4.5.0. (No changes needed)
+
+ -- Nicholas D Steeves <nsteeves@gmail.com>  Tue, 25 Aug 2020 20:09:17 -0400
+
+folding-mode-el (0+20170925.1538-2) unstable; urgency=medium
+
+  * debian/rules: Fix typo.
+  * Add 0003-folding.el-Fix-typo-thanks-to-Reuben-Thomas.patch
+    to fix upstream typo.  (Closes: #639222)
+  * Switch to debhelper-compat, and drop debian/compat.
+  * Declare Standards-Version: 4.3.0. (No changes needed)
+
+ -- Nicholas D Steeves <nsteeves@gmail.com>  Fri, 01 Mar 2019 15:45:18 -0700
+
+folding-mode-el (0+20170925.1538-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #639221)
+
+ -- Nicholas D Steeves <nsteeves@gmail.com>  Thu, 20 Sep 2018 21:33:53 -0400
